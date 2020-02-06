@@ -69,12 +69,12 @@
       }
 
       p {
-        color: red;
+        color: black;
       }
       .overlay {
         z-index: 2;
         opacity: 1;
-        background: rgba(7, 173, 228, 0.8);
+        background: rgb(255, 255, 255, 0.5);
         transition: opacity 200ms ease-in-out;
         border-radius: 4px;
       }
@@ -83,56 +83,90 @@
   <body class="d-flex flex-column h-100">
     <div class="container-fluid">
       <div class="row bg">
-        <div class="col-xl-6">
-            
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+        <div style="background: rgb(255, 255, 255, 0.9);z-index: 999999;" class="col-xl-6">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"
+                    >Home <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    >Disabled</a
+                  >
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input
+                  style="width: 100%"
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
                 </button>
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input style="width: 100%" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav>
+              </form>
+            </div>
+          </nav>
           <main role="main" class="flex-shrink-0">
             <div id="div-one" style="margin-top: 3rem!important;" class="row">
               <div style="max-width: 5%;" class="col-md-6">
@@ -271,36 +305,154 @@
     ></script>
 
     <script>
-      var offsetHeight = [...document.querySelectorAll("#div-one")];
-      console.log(offsetHeight);
+      var offsetHeight = [...document.querySelectorAll("#div-one")]; // calc height
+
       var plus = 0;
-      offsetHeight.map((item, key) => {
+
+      function checkonclick(value = null) {
+        if (value) {
+          if((value === "status1")){
+            plus = 0
+          }else if((value === "status2")){
+            plus = 0
+          }
+          offsetHeight.map((item, key) => {
+            // ไม่เอาค่าที่เท่ากับ สเตตัสส่งมา และความสูงถูกเอาไปใช้
+            if (key === 0 && value === "status1") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 1 && value === "status1") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 1 && value === "status2") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 2 && value === "status1") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 2 && value === "status2") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 3 && value === "status1") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 3 && value === "status2") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 4 && value === "status1") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 4 && value === "status2") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 5 && value === "status1") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            } else if (key === 5 && value === "status2") {
+              let numberheight = item.offsetHeight;
+              plus += numberheight;
+            }
+          });
+        }
+      }
+
+      let offsetHeightele = [...document.querySelectorAll("#div-one")];
+      let overlayelm = [...document.querySelectorAll(".overlay")];
+      let elmnavbar = [...document.querySelectorAll(".navbar")];
+
+      //       var h = document.getElementById('someDiv').clientHeight;
+      // var h = document.getElementById('someDiv').offsetHeight;
+      // var h = document.getElementById('someDiv').scrollHeight;
+
+      offsetHeightele.map((item, key) => {
         // ไม่เอาค่าที่เท่ากับ สเตตัสส่งมา และความสูงถูกเอาไปใช้
         // let a = res.offsetHeight;
         // let b = res.offsetHeight
         // a += b
-
         if (key === 0) {
-          let numberheight = item.offsetHeight;
-          plus += numberheight;
+          let x1,
+            x2,
+            x3,
+            x4 = 0;
+
+          function distanceBetweenElements(elementOne, elementTwo) {
+            let distance = -1;
+
+            const x1 = elementOne.offsetTop;
+            const y1 = elementOne.offsetLeft;
+            const x2 = elementTwo.offsetTop;
+            const y2 = elementTwo.offsetLeft;
+            const xDistance = x1 - x2;
+            const yDistance = y1 - y2;
+
+            distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+
+            return distance;
+          }
+
+          const pointOne = item;
+          const pointTwo = elmnavbar[0];
+
+          const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
+
+          let numbermarginheight = Number(spaceBetween.toFixed(3));
+          // Number( (spaceBetween).toFixed(3) )
+
+          item.addEventListener("click", function() {
+            overlayelm[0].style.setProperty(
+              "margin-top",
+              `${numbermarginheight}px`
+            );
+            let textcheckoneonclick = "status1";
+            checkonclick(textcheckoneonclick);
+            console.log(plus);
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 35px)`);
+          });
         } else if (key === 1) {
-          let numberheight = item.offsetHeight;
-          plus += numberheight;
+          let x1,
+            x2,
+            x3,
+            x4 = 0;
+
+          function distanceBetweenElements(elementOne, elementTwo) {
+            let distance = -1;
+
+            const x1 = elementOne.offsetTop;
+            const y1 = elementOne.offsetLeft;
+            const x2 = elementTwo.offsetTop;
+            const y2 = elementTwo.offsetLeft;
+            const xDistance = x1 - x2;
+            const yDistance = y1 - y2;
+
+            distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+
+            return distance;
+          }
+
+          const pointOne = item;
+          const pointTwo = elmnavbar[0];
+
+          const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
+
+          let numbermarginheight = Number(spaceBetween.toFixed(3));
+          // Number( (spaceBetween).toFixed(3) )
+
+          item.addEventListener("click", function() {
+            overlayelm[0].style.setProperty(
+              "margin-top",
+              `${numbermarginheight}px`
+            );
+            let textcheckoneonclick = "status2";
+            checkonclick(textcheckoneonclick);
+            console.log(plus);
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 35px)`);
+          });
         } else if (key === 2) {
-          let numberheight = item.offsetHeight;
-          plus += numberheight;
         } else if (key === 3) {
-          let numberheight = item.offsetHeight;
-          plus += numberheight;
         } else if (key === 4) {
-          let numberheight = item.offsetHeight;
-          plus += numberheight;
         } else if (key === 5) {
-          let numberheight = item.offsetHeight;
-          plus += numberheight;
         }
       });
-      console.log(plus);
 
       /* 
       top ele overlay % change Follow status api
