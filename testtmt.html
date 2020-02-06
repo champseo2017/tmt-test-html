@@ -83,7 +83,10 @@
   <body class="d-flex flex-column h-100">
     <div class="container-fluid">
       <div class="row bg">
-        <div style="background: rgb(255, 255, 255, 0.9);z-index: 999999;" class="col-xl-6">
+        <div
+          style="background: rgb(255, 255, 255, 0.9);z-index: 999999;"
+          class="col-xl-6"
+        >
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">Navbar</a>
             <button
@@ -188,7 +191,7 @@
 
             <div id="div-one" class="row">
               <div style="max-width: 5%;" class="col-md-6">
-                1
+                2
               </div>
 
               <div class="col-md-6">
@@ -206,7 +209,7 @@
             </div>
             <div id="div-one" class="row">
               <div style="max-width: 5%;" class="col-md-6">
-                1
+                3
               </div>
               <div class="col-md-6">
                 <p>
@@ -223,7 +226,7 @@
             </div>
             <div id="div-one" class="row">
               <div style="max-width: 5%;" class="col-md-6">
-                1
+                4
               </div>
               <div class="col-md-6">
                 <p>
@@ -240,7 +243,7 @@
             </div>
             <div id="div-one" class="row">
               <div style="max-width: 5%;" class="col-md-6">
-                1
+                5
               </div>
               <div class="col-md-6">
                 <p>
@@ -257,7 +260,7 @@
             </div>
             <div id="div-one" class="row">
               <div style="max-width: 5%;" class="col-md-6">
-                1
+                6
               </div>
               <div class="col-md-6">
                 <p>
@@ -311,47 +314,155 @@
 
       function checkonclick(value = null) {
         if (value) {
-          if((value === "status1")){
-            plus = 0
-          }else if((value === "status2")){
-            plus = 0
-          }
+          // plus 0
+            plus = 0;
+        
           offsetHeight.map((item, key) => {
-            // ไม่เอาค่าที่เท่ากับ สเตตัสส่งมา และความสูงถูกเอาไปใช้
-            if (key === 0 && value === "status1") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 1 && value === "status1") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 1 && value === "status2") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 2 && value === "status1") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 2 && value === "status2") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 3 && value === "status1") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 3 && value === "status2") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 4 && value === "status1") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 4 && value === "status2") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 5 && value === "status1") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            } else if (key === 5 && value === "status2") {
-              let numberheight = item.offsetHeight;
-              plus += numberheight;
-            }
+            // main switch status
+            const mainswitchstatus = (status, item, key) => {
+              switch (true) {
+                case status === "status1":
+                  status1func(item, key);
+                  break;
+                case status === "status2":
+                  status2func(item, key);
+                  break;
+                case status === "status3":
+                  status3func(item, key);
+                  break;
+                case status === "status4":
+                  status4func(item, key);
+                  break;
+                case status === "status5":
+                  status5func(item, key);
+                  break;
+                case status === "status6":
+                  status6func(item, key);
+                  break;
+              }
+            };
+
+            // function status1
+            const status1func = (valueitem, keyvalue) => {
+              switch (true) {
+                case keyvalue === 0:
+                  var numberheight0 = valueitem.offsetHeight;
+                  plus += numberheight0;
+                  break;
+                case keyvalue === 1:
+                  var numberheight1 = valueitem.offsetHeight;
+                  plus += numberheight1;
+                  break;
+                case keyvalue === 2:
+                  var numberheight2 = valueitem.offsetHeight;
+                  plus += numberheight2;
+                  break;
+                case keyvalue === 3:
+                  var numberheight3 = valueitem.offsetHeight;
+                  plus += numberheight3;
+                  break;
+                case keyvalue === 4:
+                  var numberheight4 = valueitem.offsetHeight;
+                  plus += numberheight4;
+                  break;
+                case keyvalue === 5:
+                  var numberheight5 = valueitem.offsetHeight;
+                  plus += numberheight5;
+                  break;
+              }
+            };
+
+            // function status2
+            const status2func = (valueitem, keyvalue) => {
+              switch (true) {
+                case keyvalue === 1:
+                  var numberheight1 = valueitem.offsetHeight;
+                  plus += numberheight1;
+                  break;
+                case keyvalue === 2:
+                  var numberheight2 = valueitem.offsetHeight;
+                  plus += numberheight2;
+                  break;
+                case keyvalue === 3:
+                  var numberheight3 = valueitem.offsetHeight;
+                  plus += numberheight3;
+                  break;
+                case keyvalue === 4:
+                  var numberheight4 = valueitem.offsetHeight;
+                  plus += numberheight4;
+                  break;
+                case keyvalue === 5:
+                  var numberheight5 = valueitem.offsetHeight;
+                  plus += numberheight5;
+                  break;
+              }
+            };
+
+            // function status3
+            const status3func = (valueitem, keyvalue) => {
+              switch (true) {
+                case keyvalue === 2:
+                  var numberheight3 = valueitem.offsetHeight;
+                  plus += numberheight3;
+                  break;
+                case keyvalue === 3:
+                  var numberheight3 = valueitem.offsetHeight;
+                  plus += numberheight3;
+                  break;
+                case keyvalue === 4:
+                  var numberheight4 = valueitem.offsetHeight;
+                  plus += numberheight4;
+                  break;
+                case keyvalue === 5:
+                  var numberheight5 = valueitem.offsetHeight;
+                  plus += numberheight5;
+                  break;
+              }
+            };
+
+            // function status4
+            const status4func = (valueitem, keyvalue) => {
+              switch (true) {
+                case keyvalue === 3:
+                  var numberheight3 = valueitem.offsetHeight;
+                  plus += numberheight3;
+                  break;
+                case keyvalue === 4:
+                  var numberheight4 = valueitem.offsetHeight;
+                  plus += numberheight4;
+                  break;
+                case keyvalue === 5:
+                  var numberheight5 = valueitem.offsetHeight;
+                  plus += numberheight5;
+                  break;
+              }
+            };
+
+            // function status5
+            const status5func = (valueitem, keyvalue) => {
+              switch (true) {
+                case keyvalue === 4:
+                  var numberheight4 = valueitem.offsetHeight;
+                  plus += numberheight4;
+                  break;
+                case keyvalue === 5:
+                  var numberheight5 = valueitem.offsetHeight;
+                  plus += numberheight5;
+                  break;
+              }
+            };
+
+            // function status6
+            const status6func = (valueitem, keyvalue) => {
+              switch (true) {
+                case keyvalue === 5:
+                  var numberheight5 = valueitem.offsetHeight;
+                  plus += numberheight5;
+                  break;
+              }
+            };
+
+            mainswitchstatus(value, item, key);
           });
         }
       }
@@ -360,15 +471,7 @@
       let overlayelm = [...document.querySelectorAll(".overlay")];
       let elmnavbar = [...document.querySelectorAll(".navbar")];
 
-      //       var h = document.getElementById('someDiv').clientHeight;
-      // var h = document.getElementById('someDiv').offsetHeight;
-      // var h = document.getElementById('someDiv').scrollHeight;
-
       offsetHeightele.map((item, key) => {
-        // ไม่เอาค่าที่เท่ากับ สเตตัสส่งมา และความสูงถูกเอาไปใช้
-        // let a = res.offsetHeight;
-        // let b = res.offsetHeight
-        // a += b
         if (key === 0) {
           let x1,
             x2,
@@ -395,7 +498,7 @@
 
           const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
 
-          let numbermarginheight = Number(spaceBetween.toFixed(3));
+          let numbermarginheight = spaceBetween.toFixed(3);
           // Number( (spaceBetween).toFixed(3) )
 
           item.addEventListener("click", function() {
@@ -405,8 +508,8 @@
             );
             let textcheckoneonclick = "status1";
             checkonclick(textcheckoneonclick);
-            console.log(plus);
-            overlayelm[0].style.setProperty("height", `calc(${plus}px - 35px)`);
+
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 20px)`);
           });
         } else if (key === 1) {
           let x1,
@@ -434,7 +537,7 @@
 
           const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
 
-          let numbermarginheight = Number(spaceBetween.toFixed(3));
+          let numbermarginheight = spaceBetween.toFixed(3);
           // Number( (spaceBetween).toFixed(3) )
 
           item.addEventListener("click", function() {
@@ -444,29 +547,167 @@
             );
             let textcheckoneonclick = "status2";
             checkonclick(textcheckoneonclick);
-            console.log(plus);
-            overlayelm[0].style.setProperty("height", `calc(${plus}px - 35px)`);
+
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 20px)`);
           });
         } else if (key === 2) {
+          let x1,
+            x2,
+            x3,
+            x4 = 0;
+
+          function distanceBetweenElements(elementOne, elementTwo) {
+            let distance = -1;
+
+            const x1 = elementOne.offsetTop;
+            const y1 = elementOne.offsetLeft;
+            const x2 = elementTwo.offsetTop;
+            const y2 = elementTwo.offsetLeft;
+            const xDistance = x1 - x2;
+            const yDistance = y1 - y2;
+
+            distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+
+            return distance;
+          }
+
+          const pointOne = item;
+          const pointTwo = elmnavbar[0];
+
+          const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
+
+          let numbermarginheight = spaceBetween.toFixed(3);
+          //Number(spaceBetween.toFixed(3));
+
+          item.addEventListener("click", function() {
+            overlayelm[0].style.setProperty(
+              "margin-top",
+              `${numbermarginheight}px`
+            );
+            let textcheckoneonclick = "status3";
+            checkonclick(textcheckoneonclick);
+
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 20px)`);
+          });
         } else if (key === 3) {
+          let x1,
+            x2,
+            x3,
+            x4 = 0;
+
+          function distanceBetweenElements(elementOne, elementTwo) {
+            let distance = -1;
+
+            const x1 = elementOne.offsetTop;
+            const y1 = elementOne.offsetLeft;
+            const x2 = elementTwo.offsetTop;
+            const y2 = elementTwo.offsetLeft;
+            const xDistance = x1 - x2;
+            const yDistance = y1 - y2;
+
+            distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+
+            return distance;
+          }
+
+          const pointOne = item;
+          const pointTwo = elmnavbar[0];
+
+          const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
+
+          let numbermarginheight = spaceBetween.toFixed(3);
+          //Number(spaceBetween.toFixed(3));
+
+          item.addEventListener("click", function() {
+            overlayelm[0].style.setProperty(
+              "margin-top",
+              `${numbermarginheight}px`
+            );
+            let textcheckoneonclick = "status4";
+            checkonclick(textcheckoneonclick);
+
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 20px)`);
+          });
         } else if (key === 4) {
+          let x1,
+            x2,
+            x3,
+            x4 = 0;
+
+          function distanceBetweenElements(elementOne, elementTwo) {
+            let distance = -1;
+
+            const x1 = elementOne.offsetTop;
+            const y1 = elementOne.offsetLeft;
+            const x2 = elementTwo.offsetTop;
+            const y2 = elementTwo.offsetLeft;
+            const xDistance = x1 - x2;
+            const yDistance = y1 - y2;
+
+            distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+
+            return distance;
+          }
+
+          const pointOne = item;
+          const pointTwo = elmnavbar[0];
+
+          const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
+
+          let numbermarginheight = spaceBetween.toFixed(3);
+          // Number(spaceBetween.toFixed(3));
+
+          item.addEventListener("click", function() {
+            overlayelm[0].style.setProperty(
+              "margin-top",
+              `${numbermarginheight}px`
+            );
+            let textcheckoneonclick = "status5";
+            checkonclick(textcheckoneonclick);
+
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 20px)`);
+          });
         } else if (key === 5) {
+          let x1,
+            x2,
+            x3,
+            x4 = 0;
+
+          function distanceBetweenElements(elementOne, elementTwo) {
+            let distance = -1;
+
+            const x1 = elementOne.offsetTop;
+            const y1 = elementOne.offsetLeft;
+            const x2 = elementTwo.offsetTop;
+            const y2 = elementTwo.offsetLeft;
+            const xDistance = x1 - x2;
+            const yDistance = y1 - y2;
+
+            distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+
+            return distance;
+          }
+
+          const pointOne = item;
+          const pointTwo = elmnavbar[0];
+
+          const spaceBetween = distanceBetweenElements(pointOne, pointTwo);
+
+          let numbermarginheight = spaceBetween.toFixed(3);
+          // Number(spaceBetween.toFixed(3));
+
+          item.addEventListener("click", function() {
+            overlayelm[0].style.setProperty(
+              "margin-top",
+              `${numbermarginheight}px`
+            );
+            let textcheckoneonclick = "status6";
+            checkonclick(textcheckoneonclick);
+
+            overlayelm[0].style.setProperty("height", `calc(${plus}px - 20px)`);
+          });
         }
       });
-
-      /* 
-      top ele overlay % change Follow status api
-
-      คำนวณหาความสูงที่ยังไม่ถูกใช้ set min-height: calc(1248px - 35px); ให้กับ ele overlay
-
-      
-      
-      
-      
-      
-      
-      
-      */
     </script>
   </body>
 </html>
